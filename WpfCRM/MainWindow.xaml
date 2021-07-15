@@ -1,0 +1,16 @@
+﻿<Window x:Class="WpfCRM.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfCRM"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="450">
+    <Grid>
+        <TextBox x:Name="LoginBox" HorizontalAlignment="Left" Height="25" Margin="115,143,0,0" TextWrapping="Wrap" ToolTip="Login" VerticalAlignment="Top" Width="200" FontSize="14"/>
+        <PasswordBox x:Name="PassworsBox" ToolTip="Password" Height="25" HorizontalAlignment="Left" Margin="115,173,0,0" VerticalAlignment="Top" Width="200"/>
+        <Button Content="Sign In" ToolTip="Sign In" Height="25" HorizontalAlignment="Left" Margin="115,217,0,0" VerticalAlignment="Top" Width="200" Click="Button_Click"/>
+        <TextBlock x:Name="Note" HorizontalAlignment="Left" Height="25" Margin="115,256,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200"/>
+
+    </Grid>
+</Window>
