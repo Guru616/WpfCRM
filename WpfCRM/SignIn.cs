@@ -8,11 +8,11 @@ namespace WpfCRM
 {
     class SignIn
     {
-        DataBase dataBase = new DataBase();
+        DataBaseProcessor dataBase = new DataBaseProcessor();
         MainWindow main = new MainWindow();
         public void signIn (string login, string password)
         {
-            foreach (Users item in dataBase.getdata())
+            foreach (Users item in dataBase.GetUsers())
             {
                 if (login == item.Login && password == item.Password)
                 {
