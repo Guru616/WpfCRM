@@ -5,12 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfCRM"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="450">
-    <Grid>
-        <TextBox x:Name="LoginBox" HorizontalAlignment="Left" Height="25" Margin="115,143,0,0" TextWrapping="Wrap" ToolTip="Login" VerticalAlignment="Top" Width="200" FontSize="14"/>
-        <PasswordBox x:Name="PassworsBox" ToolTip="Password" Height="25" HorizontalAlignment="Left" Margin="115,173,0,0" VerticalAlignment="Top" Width="200"/>
-        <Button Content="Sign In" ToolTip="Sign In" Height="25" HorizontalAlignment="Left" Margin="115,217,0,0" VerticalAlignment="Top" Width="200" Click="Button_Click"/>
-        <TextBlock x:Name="Note" HorizontalAlignment="Left" Height="25" Margin="115,256,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200"/>
+        Title="CRM System" Height="400" Width="500" Background="{x:Null}" ResizeMode="NoResize" Foreground="White" WindowStyle="None">
+    <Grid Background="White">
+        <TextBox x:Name="LoginBox" HorizontalAlignment="Left" Height="25" Margin="115,0,0,232" TextWrapping="Wrap" ToolTip="Login" VerticalAlignment="Bottom" Width="250" FontSize="14" SelectionBrush="Black" BorderBrush="Black"/>
+        <PasswordBox x:Name="PassworsBox" ToolTip="Password" Height="25" HorizontalAlignment="Left" Margin="115,173,0,0" VerticalAlignment="Top" Width="250" BorderBrush="Black" SelectionBrush="Black"/>
+        <Button Content="Sign In" ToolTip="Sign In"  HorizontalAlignment="Left" Margin="115,217,0,0" VerticalAlignment="Top" Height="25" Width="110" Click="Button_SignIn" FontWeight="Bold" BorderBrush="Black" Background="White" FontSize="14"/>
+        <TextBlock x:Name="Note" HorizontalAlignment="Left" Height="25" Margin="115,247,0,0" TextWrapping="Wrap" Text=""  VerticalAlignment="Top" Width="250" MinWidth="200" MinHeight="25" Foreground="Red" FontWeight="Bold" FontSize="14"/>
+        <Button Content="Sign Up" HorizontalAlignment="Left" Margin="255,217,0,0" VerticalAlignment="Top" Height="25" Width="110" FontWeight="Bold" BorderBrush="Black" Background="White" FontSize="14"/>
+        <Button Content="X" HorizontalAlignment="Right" Background="{x:Null}" Foreground="Black" BorderBrush="White" FontSize="18" Click="Button_Close" Height="40" Width="40" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

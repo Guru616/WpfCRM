@@ -25,27 +25,40 @@ namespace WpfCRM
         {
             InitializeComponent();
         }
+        bool Check()
+        {
+            if (LoginBox.Text == "" || PassworsBox.Password == "") { return false; }
+            else { return true; }
+        }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_SignIn(object sender, RoutedEventArgs e)
         {
             try
             {
-                if (LoginBox.Text == null || PassworsBox.Password == null)
+                if (!Check())
                 {
-                    Note.Text = "Enter login or password";
+                    LoginBox.BorderBrush = Brushes.Red;
+                    PassworsBox.BorderBrush = Brushes.Red;
+                    Note.Text = "Incorrect username or password.";
                 }
                 else
                 {
+                    LoginBox.BorderBrush = Brushes.Black;
+                    PassworsBox.BorderBrush = Brushes.Black;
+                    Note.Text = "";
                     SignIn sign = new SignIn();
-                    sign.signIn(LoginBox.Text, PassworsBox.Password.ToString());
-                    LogWriter logWriter = new LogWriter();
-                    logWriter.FileWrite(LoginBox.Text);
+                    sign.signIn(LoginBox.Text, PassworsBox.Password);
                 }
             }
             catch (Exception excp)
             {
                 MessageBox.Show(excp.Message);
             }
+        }
+
+        private void Button_Close(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
