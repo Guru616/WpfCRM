@@ -85,6 +85,7 @@
     </Compile>
     <Compile Include="DataBase.cs" />
     <Compile Include="InterfaceData.cs" />
+    <Compile Include="LogWriter.cs" />
     <Compile Include="SignIn.cs" />
     <Compile Include="Users.cs" />
     <Page Include="AdminPanel.xaml">

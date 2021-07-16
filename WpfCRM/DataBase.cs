@@ -10,10 +10,11 @@ namespace WpfCRM
     {
         
         List<Users> users = new List<Users>();
+
         public List<Users> GetUsers()
         {
             users.Add(new Users { Name = "Fred", Surname = "Guru", Login = "admin", Password = "1" });
-            users.Add(new Users { Name = "Fred", Surname = "Guru", Login = "user", Password = "2" });
+            users.Add(new Users { Name = "Feduk", Surname = "Guru", Login = "user", Password = "2" });
             return users;
         }
     }

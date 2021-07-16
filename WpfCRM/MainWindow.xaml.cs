@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,16 +38,14 @@ namespace WpfCRM
                 {
                     SignIn sign = new SignIn();
                     sign.signIn(LoginBox.Text, PassworsBox.Password.ToString());
-                    //this.Close();
+                    LogWriter logWriter = new LogWriter();
+                    logWriter.FileWrite(LoginBox.Text);
                 }
             }
             catch (Exception excp)
             {
                 MessageBox.Show(excp.Message);
             }
-
-
-
         }
     }
 }

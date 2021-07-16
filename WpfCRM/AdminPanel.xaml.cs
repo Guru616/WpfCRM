@@ -21,7 +21,10 @@ namespace WpfCRM
     {
         public AdminPanel()
         {
+
             InitializeComponent();
+            DataBaseProcessor dataBaseProcessor = new DataBaseProcessor();
+            UserList.ItemsSource = dataBaseProcessor.GetUsers();
         }
     }
 }
