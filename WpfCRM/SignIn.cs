@@ -18,10 +18,12 @@ namespace WpfCRM
                 {
                     AdminPanel panel = new AdminPanel();
                     panel.Show();
+                    LogWriter logWriter = new LogWriter();
+                    logWriter.FileWrite(login);
                 }
-                else { main.Note.Text = "Enter login or password"; }
                 //MessageBox.Show("1");
             }
+
         }
 
     }
