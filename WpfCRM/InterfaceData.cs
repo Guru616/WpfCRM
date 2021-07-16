@@ -10,6 +10,10 @@ namespace WpfCRM
     {
         List<Users> GetUsers();
     }
+    interface IFileWriter
+    {
+        void FileWrite(string login);
+    }
     interface IDataProcessor
     {
         void InterfaceData(InterfaceData interfaceData);
