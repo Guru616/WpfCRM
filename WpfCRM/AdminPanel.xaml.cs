@@ -25,6 +25,7 @@ namespace WpfCRM
             InitializeComponent();
             DataBaseProcessor dataBaseProcessor = new DataBaseProcessor();
             UserList.ItemsSource = dataBaseProcessor.GetUsers();
+            
         }
     }
 }

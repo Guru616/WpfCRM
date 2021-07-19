@@ -19,7 +19,7 @@ namespace WpfCRM
                     AdminPanel panel = new AdminPanel();
                     panel.Show();
                     LogWriter logWriter = new LogWriter();
-                    logWriter.FileWrite(login);
+                    logWriter.LogWrite(login);
                 }
                 //MessageBox.Show("1");
             }

@@ -10,9 +10,10 @@ namespace WpfCRM
     {
         List<Users> GetUsers();
     }
-    interface IFileWriter
+    interface ILogWriter
     {
-        void FileWrite(string login);
+        string PathCreator();
+        void LogWrite(string login);
     }
     interface IDataProcessor
     {
