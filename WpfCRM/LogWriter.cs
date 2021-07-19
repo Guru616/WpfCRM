@@ -6,13 +6,29 @@ using System.Threading.Tasks;
 using System.IO;
 namespace WpfCRM
 {
-    class LogWriter : IFileWriter
+    class LogWriter : ILogWriter
     {
-        public void FileWrite(string login)
+        public string PathCreator()
+        {
+            string dirName = "Logs";
+            string logdir = Path.Combine(Environment.CurrentDirectory, dirName);
+            string date = DateTime.Now.ToShortDateString().Replace("/", "-");
+            string logpath = Path.Combine(Environment.CurrentDirectory, "Log " + date + ".txt");
+
+            if (Directory.Exists(logdir))
+            {
+                return logpath = Path.Combine(Path.Combine(Environment.CurrentDirectory, dirName), "Log " + date + ".txt");
+            }
+            else
+            {
+                Directory.CreateDirectory(logdir);
+                return logpath = Path.Combine(Path.Combine(Environment.CurrentDirectory, dirName), "Log " + date + ".txt");
+            }
+        }
+        public void LogWrite(string login)
         {
             DataBaseProcessor dataBase = new DataBaseProcessor();
-            string date = DateTime.Now.ToShortDateString().Replace("/","-");
-            using (StreamWriter streamWriter = new StreamWriter(Path.Combine(Environment.CurrentDirectory, "Log " + date + ".txt" ), false,Encoding.Default))
+            using (StreamWriter streamWriter = new StreamWriter(PathCreator(), true, Encoding.Default))
             {
                 foreach (Users item in dataBase.GetUsers())
                 {
