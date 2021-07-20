@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WpfCRM.DataModels;
 
 namespace WpfCRM
 {
     interface InterfaceData
     {
-        List<Users> GetUsers();
+        List<User> GetUsers();
     }
     interface ILogWriter
     {
