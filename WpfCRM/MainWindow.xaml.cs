@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfCRM.DataModels;
 
 namespace WpfCRM
 {
@@ -22,7 +23,28 @@ namespace WpfCRM
     public partial class MainWindow : Window
     {
         public MainWindow()
-        {
+        {   
+           using(var context = new AppContext())
+            {
+                var user = new User()
+                {
+                    Name = "Fedor",
+                    Surname = "Guru",
+                    Login = "Guru",
+                    Password = "1",
+                    Id_acces = 1
+                };
+                var role = new Role()
+                {
+                    NameRole = "admin",
+                };
+                context.Roles.Add(role);
+                context.Users.Add(user);
+                context.SaveChanges();
+
+
+                MessageBox.Show($" id: {user.Id}, name: {user.Name},(login: {user.Login}), role: {role.NameRole}");
+            }
             InitializeComponent();
         }
         bool Check()

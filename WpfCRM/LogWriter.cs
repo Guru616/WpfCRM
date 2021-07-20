@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using WpfCRM.DataModels;
+
 namespace WpfCRM
 {
     class LogWriter : ILogWriter
@@ -30,7 +32,7 @@ namespace WpfCRM
             DataBaseProcessor dataBase = new DataBaseProcessor();
             using (StreamWriter streamWriter = new StreamWriter(PathCreator(), true, Encoding.Default))
             {
-                foreach (Users item in dataBase.GetUsers())
+                foreach (User item in dataBase.GetUsers())
                 {
                     if (login == item.Login)
                     {
