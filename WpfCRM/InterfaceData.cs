@@ -20,4 +20,9 @@ namespace WpfCRM
     {
         void InterfaceData(InterfaceData interfaceData);
     }
+    interface IAuthentication
+    {
+        void SignIn(string login, string password);
+        void SignUp(string name, string surname, string email, string login, string password);
+    }
 }
