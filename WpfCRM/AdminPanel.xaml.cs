@@ -21,11 +21,14 @@ namespace WpfCRM
     {
         public AdminPanel()
         {
-
             InitializeComponent();
-            DataBaseProcessor dataBaseProcessor = new DataBaseProcessor();
-            UserList.ItemsSource = dataBaseProcessor.GetUsers();
+
             
+        }
+
+        private void Button_Close(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

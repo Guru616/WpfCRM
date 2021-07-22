@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfCRM"
         mc:Ignorable="d"
-        Title="Registration" Height="500" Width="400" ResizeMode="NoResize" WindowStyle="None">
+        Title="Registration" Height="500" Width="400" ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterScreen">
     <Grid>
         <Button Content="X" HorizontalAlignment="Right" Background="{x:Null}" Foreground="Black" BorderBrush="White" FontSize="18" Click="Button_Close" Height="40" Width="40" VerticalAlignment="Top"/>
 
@@ -34,6 +34,6 @@
         
         <!--Sign Up -->
         <Button Content="Sign Up" HorizontalAlignment="Left" Margin="70,361,0,0" VerticalAlignment="Top" Height="25" Width="250" FontWeight="Bold" Click="Button_SignUp" BorderBrush="Black" Background="White" FontSize="14"/>
-        <TextBlock x:Name="Note" HorizontalAlignment="Left" Height="25" Margin="70,391,0,0" TextWrapping="Wrap" Text=""  VerticalAlignment="Top" Width="250" MinWidth="200" MinHeight="25" Foreground="Red" FontWeight="Bold" FontSize="14"/>
+        <TextBlock x:Name="NoteReg" HorizontalAlignment="Left" Height="25" Margin="70,391,0,0" TextWrapping="Wrap" Text=""  VerticalAlignment="Top" Width="250" MinWidth="200" MinHeight="25" Foreground="Red" FontWeight="Bold" FontSize="14"/>
     </Grid>
 </Window>

@@ -22,6 +22,7 @@ namespace WpfCRM
         public RegistrationWindow()
         {
             InitializeComponent();
+            
         }
         bool Check()
         {
@@ -32,17 +33,19 @@ namespace WpfCRM
                 LoginBox.BorderBrush = Brushes.Red;
                 PassworsBox.BorderBrush = Brushes.Red;
                 PassworsBox_Copy.BorderBrush = Brushes.Red;
-                Note.Text = "Incorrect username or password.";
-                Note.Text = "";
+                NoteReg.Text = "Incorrect username or password.";
+
                 return false;
             }
-            else 
+            else
             {
                 NameBox.BorderBrush = Brushes.Black;
                 SurnameBox.BorderBrush = Brushes.Black;
                 LoginBox.BorderBrush = Brushes.Black;
                 PassworsBox.BorderBrush = Brushes.Black;
                 PassworsBox_Copy.BorderBrush = Brushes.Black;
+                NoteReg.Text = "";
+
                 return true;
             }
         }
@@ -57,7 +60,6 @@ namespace WpfCRM
                 AuthenticationClass authentication = new AuthenticationClass();
                 authentication.SignUp(NameBox.Text, SurnameBox.Text,EmailBox.Text, LoginBox.Text, PassworsBox.Password);
             }
-
         }
 
     }

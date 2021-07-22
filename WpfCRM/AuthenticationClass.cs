@@ -10,21 +10,22 @@ namespace WpfCRM
 {
     class AuthenticationClass : IAuthentication
     {
-        DataBaseProcessor dataBase = new DataBaseProcessor();
         public void SignIn (string login, string password)
         {
-            foreach (User item in dataBase.GetUsers())
+            using (var context = new AppContext())
             {
-                if (login == item.Login && password == item.Password)
+                var users = context.Users;
+                foreach(User item in users)
                 {
-                    AdminPanel panel = new AdminPanel();
-                    panel.Show();
-                    LogWriter logWriter = new LogWriter();
-                    logWriter.LogWrite(login);
+                    if (login == item.Login && password.GetHashCode().ToString() == item.Password)
+                    {
+                        AdminPanel panel = new AdminPanel();
+                        panel.Show();
+                        LogWriter logWriter = new LogWriter();
+                        logWriter.LogWrite(login);
+                    }
                 }
-                //MessageBox.Show("1");
             }
-
         }
 
         public void SignUp(string name,string surname, string email,string login, string password)
