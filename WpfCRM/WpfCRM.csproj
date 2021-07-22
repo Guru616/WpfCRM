@@ -84,7 +84,6 @@
       <DependentUpon>AdminPanel.xaml</DependentUpon>
     </Compile>
     <Compile Include="AppContext.cs" />
-    <Compile Include="DataBase.cs" />
     <Compile Include="DataModels\Role.cs" />
     <Compile Include="InterfaceData.cs" />
     <Compile Include="LogWriter.cs" />

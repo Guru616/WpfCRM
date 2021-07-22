@@ -1,12 +1,15 @@
-﻿<Window x:Class="WpfCRM.AdminPanel"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfCRM"
+        xmlns:DataModels="clr-namespace:WpfCRM.DataModels" x:Class="WpfCRM.AdminPanel"
         mc:Ignorable="d"
-        Title="CRM System: Admin Panel" Height="450" Width="800">
+        Title="CRM System: Admin Panel" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
     <Grid>
-        <DataGrid x:Name="UserList" HorizontalAlignment="Left" Height="132" Margin="22,25,0,0" VerticalAlignment="Top" Width="729" Background="{x:Null}" BorderBrush="Black" FontSize="14" />
+        <Button Content="X" HorizontalAlignment="Right" Background="{x:Null}" Foreground="Black" BorderBrush="White" FontSize="18" Click="Button_Close" Height="40" Width="40" VerticalAlignment="Top"/>
+
+        <DataGrid x:Name="UserList" HorizontalAlignment="Left" Height="132" Margin="31,40,0,0" VerticalAlignment="Top" Width="729" Background="{x:Null}" BorderBrush="Black" FontSize="14"/>
     </Grid>
 </Window>

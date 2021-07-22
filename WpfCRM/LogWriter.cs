@@ -29,17 +29,20 @@ namespace WpfCRM
         }
         public void LogWrite(string login)
         {
-            DataBaseProcessor dataBase = new DataBaseProcessor();
-            using (StreamWriter streamWriter = new StreamWriter(PathCreator(), true, Encoding.Default))
+            using (var context = new AppContext())
             {
-                foreach (User item in dataBase.GetUsers())
+                using (StreamWriter streamWriter = new StreamWriter(PathCreator(), true, Encoding.Default))
                 {
-                    if (login == item.Login)
+                    var users = context.Users;
+                    foreach (User item in users)
                     {
-                        streamWriter.WriteLine(item.Name + " " + item.Surname + " : " + item.Login + "\t" + DateTime.Now.ToShortTimeString());
+                        if (login == item.Login)
+                        {
+                            streamWriter.WriteLine(item.Name + " " + item.Surname + " | " + "Email: " + item.Email + " | " + item.Login + "\t" + DateTime.Now.ToShortTimeString());
+                        }
                     }
-                }
 
+                }
             }
         }
     }

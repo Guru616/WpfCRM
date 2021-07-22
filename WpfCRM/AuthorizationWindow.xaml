@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfCRM"
         mc:Ignorable="d"
-        Title="CRM System" Height="400" Width="500" Background="{x:Null}" ResizeMode="NoResize" Foreground="White" WindowStyle="None">
+        Title="CRM System" Height="400" Width="500" Background="{x:Null}" ResizeMode="NoResize" Foreground="White" WindowStyle="None" WindowStartupLocation="CenterScreen">
     <Grid Background="White">
         <TextBox x:Name="LoginBox" HorizontalAlignment="Left" Height="25" Margin="115,0,0,232" TextWrapping="Wrap" ToolTip="Login" VerticalAlignment="Bottom" Width="250" FontSize="14" SelectionBrush="Black" BorderBrush="Black"/>
         <PasswordBox x:Name="PassworsBox" ToolTip="Password" Height="25" HorizontalAlignment="Left" Margin="115,173,0,0" VerticalAlignment="Top" Width="250" BorderBrush="Black" SelectionBrush="Black"/>

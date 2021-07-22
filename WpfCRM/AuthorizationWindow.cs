@@ -23,8 +23,9 @@ namespace WpfCRM
     public partial class AuthorizationWindow : Window
     {
         public AuthorizationWindow()
-        {   
+        {
             InitializeComponent();
+
         }
         bool Check()
         {
@@ -69,8 +70,6 @@ namespace WpfCRM
         {
             RegistrationWindow registration = new RegistrationWindow();
             registration.Show();
-            AuthenticationClass authentication = new AuthenticationClass();
-            //authentication.SignUp();
         }
     }
 }

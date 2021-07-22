@@ -7,18 +7,10 @@ using WpfCRM.DataModels;
 
 namespace WpfCRM
 {
-    interface InterfaceData
-    {
-        List<User> GetUsers();
-    }
     interface ILogWriter
     {
         string PathCreator();
         void LogWrite(string login);
-    }
-    interface IDataProcessor
-    {
-        void InterfaceData(InterfaceData interfaceData);
     }
     interface IAuthentication
     {
