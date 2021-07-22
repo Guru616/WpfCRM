@@ -19,10 +19,17 @@ namespace WpfCRM
                 {
                     if (login == item.Login && password.GetHashCode().ToString() == item.Password)
                     {
-                        AdminPanel panel = new AdminPanel();
-                        panel.Show();
-                        LogWriter logWriter = new LogWriter();
-                        logWriter.LogWrite(login);
+                        if(item.Id_acces.ToString() == "")
+                        {
+                            MessageBox.Show("Wait for check administration");
+                        }
+                        else
+                        {
+                            AdminPanel panel = new AdminPanel();
+                            panel.Show();
+                            LogWriter logWriter = new LogWriter();
+                            logWriter.LogWrite(login);
+                        }
                     }
                 }
             }
@@ -39,7 +46,6 @@ namespace WpfCRM
                     Login = login,
                     Password = password.GetHashCode().ToString(),
                     Email = email,
-                    Id_acces = 1
                 };
                 context.Users.Add(user);
                 context.SaveChanges();
