@@ -84,6 +84,11 @@
       <DependentUpon>AdminPanel.xaml</DependentUpon>
     </Compile>
     <Compile Include="AppContext.cs" />
+    <Compile Include="CRMDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRMDBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataModels\Role.cs" />
     <Compile Include="InterfaceData.cs" />
     <Compile Include="LogWriter.cs" />
@@ -131,7 +136,19 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="CRMDBDataSet.xsc">
+      <DependentUpon>CRMDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CRMDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CRMDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CRMDBDataSet.xss">
+      <DependentUpon>CRMDBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\WpfCRM.DataModels.User.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfCRM.DataModels;
 
 namespace WpfCRM
 {
@@ -22,13 +23,21 @@ namespace WpfCRM
         public AdminPanel()
         {
             InitializeComponent();
-
-            
         }
 
         private void Button_Close(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            WpfCRM.CRMDBDataSet cRMDBDataSet = ((WpfCRM.CRMDBDataSet)(this.FindResource("cRMDBDataSet")));
+            // Load data into the table Users. You can modify this code as needed.
+            WpfCRM.CRMDBDataSetTableAdapters.UsersTableAdapter cRMDBDataSetUsersTableAdapter = new WpfCRM.CRMDBDataSetTableAdapters.UsersTableAdapter();
+            cRMDBDataSetUsersTableAdapter.Fill(cRMDBDataSet.Users);
+            System.Windows.Data.CollectionViewSource usersViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("usersViewSource")));
+            usersViewSource.View.MoveCurrentToFirst();
         }
     }
 }
