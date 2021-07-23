@@ -24,7 +24,6 @@ namespace WpfCRM
         {
             InitializeComponent();
         }
-
         private void Button_Close(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -32,12 +31,8 @@ namespace WpfCRM
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            WpfCRM.CRMDBDataSet cRMDBDataSet = ((WpfCRM.CRMDBDataSet)(this.FindResource("cRMDBDataSet")));
-            // Load data into the table Users. You can modify this code as needed.
-            WpfCRM.CRMDBDataSetTableAdapters.UsersTableAdapter cRMDBDataSetUsersTableAdapter = new WpfCRM.CRMDBDataSetTableAdapters.UsersTableAdapter();
-            cRMDBDataSetUsersTableAdapter.Fill(cRMDBDataSet.Users);
-            System.Windows.Data.CollectionViewSource usersViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("usersViewSource")));
-            usersViewSource.View.MoveCurrentToFirst();
+            
+            
         }
     }
 }

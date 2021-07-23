@@ -7,21 +7,11 @@
         xmlns:DataModels="clr-namespace:WpfCRM.DataModels" x:Class="WpfCRM.AdminPanel"
         mc:Ignorable="d"
         Title="CRM System: Admin Panel" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" Loaded="Window_Loaded">
-    <Window.Resources>
-        <local:CRMDBDataSet x:Key="cRMDBDataSet"/>
-        <CollectionViewSource x:Key="usersViewSource" Source="{Binding Users, Source={StaticResource cRMDBDataSet}}"/>
-    </Window.Resources>
-    <Grid DataContext="{StaticResource usersViewSource}">
+    <Grid>
         <Button Content="X" HorizontalAlignment="Right" Background="{x:Null}" Foreground="Black" BorderBrush="White" FontSize="18" Click="Button_Close" Height="40" Width="40" VerticalAlignment="Top"/>
-        <DataGrid x:Name="usersDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="40,40,40,210" RowDetailsVisibilityMode="VisibleWhenSelected" BorderBrush="Black" Background="White">
-            <DataGrid.Columns>
-                <DataGridTextColumn x:Name="idColumn" Binding="{Binding Id}" Header="Id" IsReadOnly="True" Width="20"/>
-                <DataGridTextColumn x:Name="nameColumn" Binding="{Binding Name}" Header="Name" Width="*"/>
-                <DataGridTextColumn x:Name="surnameColumn" Binding="{Binding Surname}" Header="Surname" Width="*"/>
-                <DataGridTextColumn x:Name="emailColumn" Binding="{Binding Email}" Header="Email" Width="*"/>
-                <DataGridTextColumn x:Name="loginColumn" Binding="{Binding Login}" Header="Login" Width="*"/>
-                <DataGridTextColumn x:Name="roles_IdColumn" Binding="{Binding Roles_Id}" Header="Roles" Width="*"/>
-            </DataGrid.Columns>
-        </DataGrid>
+        <TextBlock HorizontalAlignment="Left" Margin="40,409,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="720" Background="Red"/>
+        
+        
+        <DataGrid x:Name="UserList"  HorizontalAlignment="Left" Height="168" Margin="40,40,0,0" VerticalAlignment="Top" Width="720"/>
     </Grid>
 </Window>
