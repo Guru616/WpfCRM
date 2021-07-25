@@ -51,6 +51,7 @@ namespace WpfCRM
             {
                 AuthenticationClass authentication = new AuthenticationClass();
                 authentication.SignIn(LoginBox.Text, PassworsBox.Password);
+                //authentication.SignInAsync(LoginBox.Text, PassworsBox.Password);
                 Close();
             }
         }

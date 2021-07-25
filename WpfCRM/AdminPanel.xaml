@@ -9,9 +9,15 @@
         Title="CRM System: Admin Panel" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" Loaded="Window_Loaded">
     <Grid>
         <Button Content="X" HorizontalAlignment="Right" Background="{x:Null}" Foreground="Black" BorderBrush="White" FontSize="18" Click="Button_Close" Height="40" Width="40" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="40,409,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="720" Background="Red"/>
+        <Button Content="Sign out" HorizontalAlignment="Right" Background="{x:Null}" Foreground="Black" BorderBrush="White" FontSize="14" Click="Button_SignOut" Height="40" Width="60" VerticalAlignment="Top" Margin="0,0,40,0" FontWeight="Bold"/>
+
+        <DataGrid x:Name="UserList" AutoGenerateColumns="True" Height="168" Margin="40,40,40,0" VerticalAlignment="Top" Width="720" Background="White">
+            <DataGrid.Columns>
+            </DataGrid.Columns>
+        </DataGrid>
         
         
-        <DataGrid x:Name="UserList"  HorizontalAlignment="Left" Height="168" Margin="40,40,0,0" VerticalAlignment="Top" Width="720"/>
+        <Button Content="Delete" Click="Button_Delete" FontSize="14" HorizontalAlignment="Left" Margin="680,0,0,197" VerticalAlignment="Bottom" Width="80" Height="40" Background="{x:Null}" FontWeight="Bold" BorderBrush="Black"/>
+        <Button Content="Save changes" Click="Button_Save" FontSize="14" HorizontalAlignment="Left" Margin="583,0,0,197" VerticalAlignment="Bottom" Width="auto" Height="40" Background="{x:Null}" FontWeight="Bold" BorderBrush="Black"/>
     </Grid>
 </Window>
