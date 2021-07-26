@@ -23,8 +23,8 @@ namespace WpfCRM
                 //var test = from item in context.Users
                 //           where item.Login == login && item.Password.GetHashCode().ToString() == password
                 //           select item;
-                
-                foreach(User item in users)
+
+                foreach (User item in users)
                 {
                     if (login == item.Login && password.GetHashCode().ToString() == item.Password)
                     {

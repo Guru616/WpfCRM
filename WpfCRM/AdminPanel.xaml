@@ -12,8 +12,6 @@
         <Button Content="Sign out" HorizontalAlignment="Right" Background="{x:Null}" Foreground="Black" BorderBrush="White" FontSize="14" Click="Button_SignOut" Height="40" Width="60" VerticalAlignment="Top" Margin="0,0,40,0" FontWeight="Bold"/>
 
         <DataGrid x:Name="UserList" AutoGenerateColumns="True" Height="168" Margin="40,40,40,0" VerticalAlignment="Top" Width="720" Background="White">
-            <DataGrid.Columns>
-            </DataGrid.Columns>
         </DataGrid>
         
         

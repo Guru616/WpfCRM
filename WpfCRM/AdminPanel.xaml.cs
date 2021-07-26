@@ -26,16 +26,10 @@ namespace WpfCRM
         {
             InitializeComponent();
         }
-        private void AdminPanel_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            context.Dispose();
-        }
         private void Button_Close(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
-
-
         private void Button_SignOut(object sender, RoutedEventArgs e)
         {
             AuthorizationWindow authorizationWindow = new AuthorizationWindow();
@@ -44,7 +38,7 @@ namespace WpfCRM
         }
         private void Button_Delete(object sender, RoutedEventArgs e)
         {
-            if (UserList.SelectedItems.Count > 0)
+            if (UserList.SelectedItems != null)
             {
                 for (int i = 0; i < UserList.SelectedItems.Count; i++)
                 {
@@ -56,18 +50,16 @@ namespace WpfCRM
                 }
             }
             context.SaveChanges();
+            UserList.UpdateLayout();
         }
-
         private void Button_Save(object sender, RoutedEventArgs e)
         {
             context.SaveChanges();
         }
-
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            context.Users.Load();
-            UserList.ItemsSource = context.Users.Local.ToBindingList();
-            this.Closing += AdminPanel_Closing;
+            var result = context.Users.Where(Name => Name == Name);
+            UserList.ItemsSource = result.ToList();
         }
     }
 }
