@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:WpfCRM"
              StartupUri="AuthorizationWindow.xaml">
     <!--AuthorizationWindow         AdminPanel-->
+
     <Application.Resources>
          
     </Application.Resources>

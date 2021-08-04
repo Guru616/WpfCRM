@@ -46,7 +46,6 @@ namespace WpfCRM
 
         private void Button_SignIn(object sender, RoutedEventArgs e)
         {
-
             if (Check())
             {
                 AuthenticationClass authentication = new AuthenticationClass();
@@ -65,6 +64,7 @@ namespace WpfCRM
             RegistrationWindow registrationWindow = new RegistrationWindow();
             registrationWindow.Owner = this;
             registrationWindow.Show();
+
         }
     }
 }

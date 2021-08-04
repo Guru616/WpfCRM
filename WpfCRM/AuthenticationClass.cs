@@ -10,21 +10,12 @@ namespace WpfCRM
 {
     class AuthenticationClass : IAuthentication
     {
-        //public async void SignInAsync(string login, string password)
-        //{
-        //    await Task.Run(() => SignIn(login, password));
-        //}
         public void SignIn (string login, string password)
         {
             using (var context = new AppContext())
             {
                 var users = context.Users;
-
-                //var test = from item in context.Users
-                //           where item.Login == login && item.Password.GetHashCode().ToString() == password
-                //           select item;
-
-                foreach (User item in users)
+                foreach(User item in users)
                 {
                     if (login == item.Login && password.GetHashCode().ToString() == item.Password)
                     {
@@ -58,13 +49,9 @@ namespace WpfCRM
                 };
                 context.Users.Add(user);
                 context.SaveChanges();
-
                 MessageBox.Show($"Successfully, {user.Name} {user.Surname}. \n Wait for check administration!") ;
                 //MessageBox.Show($" id: {user.Id}, name: {user.Name},(login: {user.Login})");
             }
-            RegistrationWindow registrationWindow = new RegistrationWindow();
-            registrationWindow.Close();
-
         }
     }
 }
