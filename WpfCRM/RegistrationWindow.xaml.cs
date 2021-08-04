@@ -26,7 +26,7 @@ namespace WpfCRM
         }
         bool Check()
         {
-            if (NameBox.Text == "" || SurnameBox.Text == "" || LoginBox.Text == "" || PassworsBox.Password == "" || PassworsBox_Copy.Password == "") 
+            if (NameBox.Text == "" || SurnameBox.Text == "" || LoginBox.Text == "" || PassworsBox.Password == "" || PassworsBox_Copy.Password == "" && PassworsBox.Password == PassworsBox_Copy.Password)
             {
                 NameBox.BorderBrush = Brushes.Red;
                 SurnameBox.BorderBrush = Brushes.Red;
@@ -59,6 +59,7 @@ namespace WpfCRM
             {
                 AuthenticationClass authentication = new AuthenticationClass();
                 authentication.SignUp(NameBox.Text, SurnameBox.Text,EmailBox.Text, LoginBox.Text, PassworsBox.Password);
+                Close();
             }
         }
 

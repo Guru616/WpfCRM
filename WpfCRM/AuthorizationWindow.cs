@@ -25,7 +25,6 @@ namespace WpfCRM
         public AuthorizationWindow()
         {
             InitializeComponent();
-
         }
         bool Check()
         {
@@ -47,17 +46,11 @@ namespace WpfCRM
 
         private void Button_SignIn(object sender, RoutedEventArgs e)
         {
-            try
+            if (Check())
             {
-                if (Check())
-                {
-                    AuthenticationClass authentication = new AuthenticationClass();
-                    authentication.SignIn(LoginBox.Text, PassworsBox.Password);
-                }
-            }
-            catch (Exception excp)
-            {
-                MessageBox.Show(excp.Message);
+                AuthenticationClass authentication = new AuthenticationClass();
+                authentication.SignIn(LoginBox.Text, PassworsBox.Password);
+                Close();
             }
         }
 
@@ -68,8 +61,10 @@ namespace WpfCRM
 
         private void Button_SignUp(object sender, RoutedEventArgs e)
         {
-            RegistrationWindow registration = new RegistrationWindow();
-            registration.Show();
+            RegistrationWindow registrationWindow = new RegistrationWindow();
+            registrationWindow.Owner = this;
+            registrationWindow.Show();
+
         }
     }
 }

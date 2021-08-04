@@ -49,9 +49,9 @@ namespace WpfCRM
                 };
                 context.Users.Add(user);
                 context.SaveChanges();
-                MessageBox.Show($" id: {user.Id}, name: {user.Name},(login: {user.Login})");
+                MessageBox.Show($"Successfully, {user.Name} {user.Surname}. \n Wait for check administration!") ;
+                //MessageBox.Show($" id: {user.Id}, name: {user.Name},(login: {user.Login})");
             }
-
         }
     }
 }

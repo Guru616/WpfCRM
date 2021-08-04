@@ -7,21 +7,68 @@
         xmlns:DataModels="clr-namespace:WpfCRM.DataModels" x:Class="WpfCRM.AdminPanel"
         mc:Ignorable="d"
         Title="CRM System: Admin Panel" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" Loaded="Window_Loaded">
-    <Window.Resources>
-        <local:CRMDBDataSet x:Key="cRMDBDataSet"/>
-        <CollectionViewSource x:Key="usersViewSource" Source="{Binding Users, Source={StaticResource cRMDBDataSet}}"/>
-    </Window.Resources>
-    <Grid DataContext="{StaticResource usersViewSource}">
-        <Button Content="X" HorizontalAlignment="Right" Background="{x:Null}" Foreground="Black" BorderBrush="White" FontSize="18" Click="Button_Close" Height="40" Width="40" VerticalAlignment="Top"/>
-        <DataGrid x:Name="usersDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="40,40,40,210" RowDetailsVisibilityMode="VisibleWhenSelected" BorderBrush="Black" Background="White">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="19*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="156*"/>
+        </Grid.RowDefinitions>
+
+        <!-- WINDOW UI -->
+        <TextBlock x:Name="TitleWindow" Text="Title" Margin="10,10,0,0"  HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Button Content="X" HorizontalAlignment="Right" Background="{x:Null}" Foreground="Black" BorderBrush="White" FontSize="18" Click="Button_Close"  Height="40" Width="40" VerticalAlignment="Top" Grid.RowSpan="2"/>
+        <Button Content="Sign out" HorizontalAlignment="Right" Background="{x:Null}" Foreground="Black" BorderBrush="White" FontSize="14" Click="Button_SignOut" Height="40" Width="60" VerticalAlignment="Top" Margin="0,0,40,0" FontWeight="Bold" Grid.RowSpan="2"/>
+
+
+        <!--PRODUCT PANEL-->
+        <DataGrid x:Name="ProductList" AutoGenerateColumns="False" Margin="34,20,40,10" Background="White" BorderBrush="Black" Grid.Row="2">
             <DataGrid.Columns>
-                <DataGridTextColumn x:Name="idColumn" Binding="{Binding Id}" Header="Id" IsReadOnly="True" Width="20"/>
-                <DataGridTextColumn x:Name="nameColumn" Binding="{Binding Name}" Header="Name" Width="*"/>
-                <DataGridTextColumn x:Name="surnameColumn" Binding="{Binding Surname}" Header="Surname" Width="*"/>
-                <DataGridTextColumn x:Name="emailColumn" Binding="{Binding Email}" Header="Email" Width="*"/>
-                <DataGridTextColumn x:Name="loginColumn" Binding="{Binding Login}" Header="Login" Width="*"/>
-                <DataGridTextColumn x:Name="roles_IdColumn" Binding="{Binding Roles_Id}" Header="Roles" Width="*"/>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="auto" />
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="auto" />
+                <DataGridTextColumn Header="Description" Binding="{Binding Description}" Width="*" />
             </DataGrid.Columns>
         </DataGrid>
+
+
+        <!--USER PANEL-->
+        <DataGrid x:Name="UserList" AutoGenerateColumns="False" Margin="0,2,40,0" Background="White" BorderBrush="Black" Height="162" VerticalAlignment="Top" HorizontalAlignment="Right" Width="567" Grid.Row="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="auto" IsReadOnly="True" />
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="auto"  IsReadOnly="True" />
+                <DataGridTextColumn Header="Surname" Binding="{Binding Surname}" Width="auto" IsReadOnly="True" />
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="auto" IsReadOnly="True" />
+                <DataGridTextColumn Header="Login" Binding="{Binding Login}" Width="auto" IsReadOnly="True" />
+
+
+                <DataGridTemplateColumn Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <!--ItemsSource="{Binding Role}"-->
+                            <ComboBox/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Delete" Click="Button_Delete_User" FontSize="14" Background="{x:Null}" FontWeight="Bold"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+        <!--ROLE PANEL-->
+        <DataGrid x:Name="RoleList" AutoGenerateColumns="False" ItemsSource="{Binding DataContext, ElementName=RoleList}" Width="122" Margin="0,0,644,0" Background="White" BorderBrush="Black" HorizontalAlignment="Right" Height="162" VerticalAlignment="Top" Grid.Row="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="auto" IsReadOnly="True"  />
+                <DataGridTextColumn x:Name="dataGridTextColumn" Header="Role" Binding="{Binding NameRole}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+        <Button Content="Delete" Click="Button_Delete" FontSize="14" HorizontalAlignment="Left" Margin="680,0,0,197" VerticalAlignment="Bottom" Width="80" Height="40" Background="{x:Null}" FontWeight="Bold" BorderBrush="Black"/>
+        <Button Content="Save changes" Click="Button_Save" FontSize="14" HorizontalAlignment="Left" Margin="583,0,0,197" VerticalAlignment="Bottom" Width="auto" Height="40" Background="{x:Null}" FontWeight="Bold" BorderBrush="Black"/>
     </Grid>
 </Window>

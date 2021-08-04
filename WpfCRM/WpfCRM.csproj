@@ -84,11 +84,9 @@
       <DependentUpon>AdminPanel.xaml</DependentUpon>
     </Compile>
     <Compile Include="AppContext.cs" />
-    <Compile Include="CRMDBDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CRMDBDataSet.xsd</DependentUpon>
-    </Compile>
+
+    <Compile Include="DataModels\Order.cs" />
+    <Compile Include="DataModels\Product.cs" />
     <Compile Include="DataModels\Role.cs" />
     <Compile Include="InterfaceData.cs" />
     <Compile Include="LogWriter.cs" />
